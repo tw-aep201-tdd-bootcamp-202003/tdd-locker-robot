@@ -2,17 +2,40 @@ package cn.xpbootcamp.locker_robot;
 
 import lombok.Data;
 
+import java.sql.Timestamp;
+import java.time.DateTimeException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
+
 @Data
 public class Locker {
     int available;
+    List ticketList = new ArrayList();
 
-    public boolean save() {
+    public Long save() {
         if (available >= 1) {
-            System.out.println("print ticket......");
+            long ticketNo = new Date().getTime();
+            ticketList.add(ticketNo);
+            System.out.println("print ticket...... "+ticketNo);
             available--;
+            return ticketNo;
+        } else {
+            return null;
+        }
+    }
+
+    public boolean validTicket(long ticket) {
+        if (ticketList.contains(ticket)) {
+            available++;
             return true;
         } else {
             return false;
         }
+    }
+
+    public boolean fetch(long ticket) {
+        return validTicket(ticket);
     }
 }

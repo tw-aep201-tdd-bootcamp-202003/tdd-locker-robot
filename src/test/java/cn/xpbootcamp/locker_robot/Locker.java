@@ -7,6 +7,12 @@ public class Locker {
     int available;
 
     public boolean save() {
-        return false;
+        if (available >= 1) {
+            System.out.println("print ticket......");
+            available--;
+            return true;
+        } else {
+            return false;
+        }
     }
 }

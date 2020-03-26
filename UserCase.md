@@ -1,6 +1,6 @@
 ### 存包
 - given 可用箱子为0 ，when 存包， then 失败，可用箱子为0
-- given 可用箱子为1，when 存包，then 打印小票，可用箱子为0
+- given 可用箱子为1，when 存包，then 打印小票，可用箱子减1
 - given 可用箱子为5，when 存包， then 打印小票，可用箱子减1
 
 ### 取包

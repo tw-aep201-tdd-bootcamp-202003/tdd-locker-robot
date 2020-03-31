@@ -10,7 +10,13 @@ import java.util.List;
 @Log
 public class Locker {
     int available;
+    int capacity;
     List ticketList = new ArrayList();
+
+    public Locker(int capacity) {
+        this.capacity = capacity;
+        this.available = capacity;
+    }
 
     public Ticket save() {
         if (available >= 1) {

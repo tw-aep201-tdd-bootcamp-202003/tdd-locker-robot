@@ -1,13 +1,9 @@
 package cn.xpbootcamp.locker_robot;
 
 import lombok.Data;
-
-import java.sql.Timestamp;
-import java.time.DateTimeException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Random;
 
 @Data
 public class Locker {
